@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 const items = [
-  { title: "Chair", image: "/istockphoto-942917354-1024x1024.jpg" },
+  { title: "Chair", image: "/pexels-heyho-6580227.jpg" },
   { title: "Bed", image: "/istockphoto-942917354-1024x1024.jpg" },
   { title: "Cupboard", image: "/istockphoto-942917354-1024x1024.jpg" },
   { title: "Lighting", image: "/istockphoto-942917354-1024x1024.jpg" },
@@ -12,8 +12,8 @@ const items = [
 export default function NewInStore() {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: false, // مهم! حتى يتكرر التشغيل كل مرة تدخل العنصر في العرض
-    threshold: 0.3, // نسبة ظهور العنصر لتشغيل الأنيميشن (30%)
+    triggerOnce: false, 
+    threshold: 0.3, 
   });
 
   useEffect(() => {
