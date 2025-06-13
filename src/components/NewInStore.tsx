@@ -4,9 +4,10 @@ import { useEffect } from "react";
 
 const items = [
   { title: "Chair", image: "/pexels-heyho-6580227.jpg" },
-  { title: "Bed", image: "/albero-furniture-bratislava-u88zDvr5V6g-unsplash.jpg" },
-  { title: "Cupboard", image: "/istockphoto-942917354-1024x1024.jpg" },
-  { title: "Lighting", image: "/istockphoto-942917354-1024x1024.jpg" },
+  { title: "Cupboard", image: "/sanibell-bv-r2SxETsa5SA-unsplash.jpg" },
+    { title: "Bed", image: "/albero-furniture-bratislava-u88zDvr5V6g-unsplash.jpg" },
+
+  { title: "Lighting", image: "/reinaldo-EQz1tZWS1hM-unsplash.jpg" },
 ];
 
 export default function NewInStore() {

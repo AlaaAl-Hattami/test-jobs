@@ -18,7 +18,7 @@ const products = [
   { name: "Treos Seroes 911", image: "/istockphoto-1474579509-1024x1024.jpg", price: 200, oldPrice: 210 },
   { name: "Multi Bilderman Slibber...", image: "/istockphoto-1015165702-1024x1024.jpg", price: 45, oldPrice: 50 },
   { name: "XORA Corner Desk", image: "/istockphoto-1015165702-1024x1024.jpg", price: 320, oldPrice: 325 },
-  { name: "Black Forest Series Wo...", image: "/istockphoto-1015165702-1024x1024.jpg", price: 225, oldPrice: 240 },
+  { name: "Black Forest Series Wo...", image: "/istockphoto-1358287896-1024x1024.jpg", price: 225, oldPrice: 240 },
 ];
 
 const ITEMS_PER_PAGE = 4; // عدد المنتجات لكل صفحة

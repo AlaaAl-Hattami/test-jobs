@@ -144,28 +144,29 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1 }}
         >
-          {[0, 1, 2, 3].map((idx) => (
-            <div key={idx} className="relative text-center sm:px-4">
-              <h3 className="text-3xl sm:text-4xl font-bold text-white select-none">
-                {["7", "2", "10k+", "260+"][idx]}
-              </h3>
-              <p className="text-sm sm:text-base mt-2 leading-tight whitespace-pre-line">
-                {
-                  [
-                    "Year\nExperience",
-                    "Opened\nin the country",
-                    "Furniture\nsold",
-                    "Variant\nFurniture",
-                  ][idx]
-                }
-              </p>
+      {[0, 1, 2, 3].map((idx) => (
+  <div key={idx} className="relative text-center sm:px-4">
+    <h3 className="text-3xl sm:text-4xl font-bold text-white select-none">
+      {["7", "2", "10k+", "260+"][idx]}
+    </h3>
+    <p className="text-sm sm:text-base mt-2 leading-tight whitespace-pre-line">
+      {
+        [
+          "Year\nExperience",
+          "Opened\nin the country",
+          "Furniture\nsold",
+          "Variant\nFurniture",
+        ][idx]
+      }
+    </p>
 
-              {/* Vertical Divider */}
-              {idx % 2 === 0 && idx < 4 && (
-                <div className="hidden md:block absolute top-1 bottom-1 right-0 w-px bg-white/60"></div>
-              )}
-            </div>
-          ))}
+    {/* Vertical Dividers between columns */}
+    {(idx === 0 || idx === 1 || idx === 2) && (
+      <div className="hidden md:block absolute top-1 bottom-1 right-0 w-px bg-white/60"></div>
+    )}
+  </div>
+))}
+
         </motion.div>
       </div>
     </div>
