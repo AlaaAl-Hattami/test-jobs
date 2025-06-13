@@ -1,9 +1,16 @@
 import { CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const FurnitureSection = () => {
   return (
     <section className="py-16 bg-white mt-10">
-      <div className="w-[90%] max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-20">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="w-[90%] max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-start gap-20"
+      >
         {/* الصورة */}
         <div className="w-full md:w-[40%] flex justify-center">
           <img
@@ -33,7 +40,7 @@ const FurnitureSection = () => {
                 </h4>
                 <p className="text-gray-600 text-sm">
                   Sometimes features require a short description. This can be
-                  detailed <br></br> description
+                  detailed <br /> description
                 </p>
               </div>
             </div>
@@ -46,13 +53,13 @@ const FurnitureSection = () => {
                 </h4>
                 <p className="text-gray-600 text-sm">
                   Sometimes features require a short description. This can be
-                  detailed <br></br> description
+                  detailed <br /> description
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

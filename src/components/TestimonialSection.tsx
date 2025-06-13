@@ -27,7 +27,7 @@ const testimonials = [
 
 function TestimonialSection() {
   const [index, setIndex] = useState(0);
-  const [activeButton, setActiveButton] = useState<"prev" | "next" | null>(null);
+  const [activeButton, setActiveButton] = useState(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -67,27 +67,22 @@ function TestimonialSection() {
               className="w-16 h-16 rounded-full object-cover mr-4 ring-2 ring-gray-200"
             />
             <div>
-              <p className="text-xl font-semibold text-gray-900">
-                {current.name}
-              </p>
+              <p className="text-xl font-semibold text-gray-900">{current.name}</p>
               <p className="text-gray-600 text-sm">{current.position}</p>
             </div>
           </div>
-          <p className="text-gray-700 text-lg leading-relaxed">
-            "{current.message}"
-          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">"{current.message}"</p>
         </div>
 
-        {/* الأسهم */}
-        <div className="flex space-x-4">
+        {/* الأزرار في الشاشات الكبيرة فقط */}
+        <div className="hidden lg:flex space-x-4">
           <button
             onClick={handlePrev}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none 
-              ${
-                activeButton === "prev"
-                  ? "bg-teal-500 text-white"
-                  : "bg-gray-200 text-gray-600 hover:bg-gray-300"
-              }`}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none ${
+              activeButton === "prev"
+                ? "bg-teal-500 text-white"
+                : "bg-gray-200 text-gray-600 hover:bg-gray-300"
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -97,22 +92,17 @@ function TestimonialSection() {
               stroke="currentColor"
               strokeWidth="2"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
           </button>
 
           <button
             onClick={handleNext}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none 
-              ${
-                activeButton === "next"
-                  ? "bg-teal-500 text-white"
-                  : "bg-gray-200 text-gray-600 hover:bg-gray-300"
-              }`}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none ${
+              activeButton === "next"
+                ? "bg-teal-500 text-white"
+                : "bg-gray-200 text-gray-600 hover:bg-gray-300"
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -122,29 +112,68 @@ function TestimonialSection() {
               stroke="currentColor"
               strokeWidth="2"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </button>
         </div>
       </motion.div>
 
-      {/* اليمين: الصورة */}
+      {/* اليمين: الصورة + أزرار التنقل للشاشات الصغيرة */}
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-        className="lg:w-1/2 flex items-center justify-center p-6"
+        className="lg:w-1/2 flex flex-col items-center justify-center p-6"
       >
-        <div className="w-[650px] h-[400px] rounded-2xl overflow-hidden shadow-lg">
+        <div className="w-[650px] max-w-full h-[400px] rounded-2xl overflow-hidden shadow-lg">
           <img
             src={current.image}
             alt="Testimonial Background"
             className="w-full h-full object-cover"
           />
+        </div>
+
+        {/* الأزرار في الشاشات الصغيرة فقط */}
+        <div className="flex lg:hidden space-x-4 mt-6">
+          <button
+            onClick={handlePrev}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none ${
+              activeButton === "prev"
+                ? "bg-teal-500 text-white"
+                : "bg-gray-200 text-gray-600 hover:bg-gray-300"
+            }`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+          </button>
+
+          <button
+            onClick={handleNext}
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none ${
+              activeButton === "next"
+                ? "bg-teal-500 text-white"
+                : "bg-gray-200 text-gray-600 hover:bg-gray-300"
+            }`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
         </div>
       </motion.div>
     </section>

@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const products = [
-  // 👇 نفس المنتجات التي عندك
   { name: "Ceiling Light", image: "/istockphoto-1015165702-1024x1024.jpg", price: 75, oldPrice: 82 },
   { name: "Wood Chair", image: "/istockphoto-869078270-1024x1024.jpg", price: 50, oldPrice: 70 },
   { name: "Papper Cupboard", image: "/istockphoto-1474579509-1024x1024.jpg", price: 105, oldPrice: 120 },
@@ -14,7 +13,7 @@ const products = [
   { name: "Black Forest Series Wo...", image: "/istockphoto-1015165702-1024x1024.jpg", price: 225, oldPrice: 240 },
 ];
 
-const ITEMS_PER_PAGE = 4;
+const ITEMS_PER_PAGE = 4; // عدد المنتجات لكل صفحة
 
 const AllProduct = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,12 +42,12 @@ const AllProduct = () => {
 
       {/* السلايدر */}
       <motion.div
-        key={currentIndex} // لازم عشان framer-motion يفعّل الحركة عند التبديل
+        key={currentIndex} // ضروري عشان تحريك framer-motion عند التبديل
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.4 }}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 justify-center"
+        className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 justify-center"
       >
         {paginatedProducts.map((product, index) => (
           <div
