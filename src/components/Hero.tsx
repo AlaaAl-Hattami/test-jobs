@@ -49,10 +49,18 @@ const Hero = () => {
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex space-x-4 md:space-x-6 text-sm md:text-base">
-              {["Home", "About", "Features", "Contact"].map((link) => (
-                <li key={link}>
-                  <a href="#" className="hover:text-gray-300 transition">
-                    {link}
+              {[
+                { name: "Home", id: "home" },
+                { name: "About", id: "about" },
+                { name: "Features", id: "features" },
+                { name: "Contact", id: "contact" },
+              ].map((link) => (
+                <li key={link.id}>
+                  <a
+                    href={`#${link.id}`}
+                    className="hover:text-gray-300 transition"
+                  >
+                    {link.name}
                   </a>
                 </li>
               ))}
@@ -71,13 +79,18 @@ const Hero = () => {
           {/* Mobile Menu Panel */}
           {isOpen && (
             <ul className="md:hidden mt-4 px-2 space-y-2 text-white text-sm bg-black/60 rounded-lg shadow-lg backdrop-blur-md py-4 z-50 relative">
-              {["Home", "About", "Features", "Contact"].map((link) => (
-                <li key={link}>
+              {[
+                { name: "Home", id: "home" },
+                { name: "About", id: "about" },
+                { name: "Features", id: "features" },
+                { name: "Contact", id: "contact" },
+              ].map((link) => (
+                <li key={link.id}>
                   <a
-                    href="#"
+                    href={`#${link.id}`}
                     className="block px-4 py-2 hover:bg-white/10 rounded transition"
                   >
-                    {link}
+                    {link.name}
                   </a>
                 </li>
               ))}
@@ -148,7 +161,7 @@ const Hero = () => {
               </p>
 
               {/* Vertical Divider */}
-              {idx % 2 === 0 && idx < 3 && (
+              {idx % 2 === 0 && idx < 4 && (
                 <div className="hidden md:block absolute top-1 bottom-1 right-0 w-px bg-white/60"></div>
               )}
             </div>

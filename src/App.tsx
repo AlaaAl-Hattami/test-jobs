@@ -10,17 +10,31 @@ import TestimonialSection from "./components/TestimonialSection";
 export default function App() {
   return (
     <div>
-      <Hero />
-      <FurnitureSection />
-      <NewInStore />
-      <MainHighlight />
-      {/* ✅ لف AllProduct داخل div فيه ID */}
-      <div id="all-products">
-        <AllProduct />
-      </div>{" "}
-      <TestimonialSection />
-      <NewsletterBanner />
-      <Footer />
+      {/* Home */}
+      <section id="home">
+        <Hero />
+      </section>
+
+      {/* About */}
+      <section id="about">
+        <FurnitureSection />
+      </section>
+
+      {/* Features */}
+      <section id="features">
+        <NewInStore />
+        <MainHighlight />
+        <div id="all-products">
+          <AllProduct />
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact">
+        <TestimonialSection />
+        <NewsletterBanner />
+        <Footer />
+      </section>
     </div>
   );
 }
