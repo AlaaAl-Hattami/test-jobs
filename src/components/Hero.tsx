@@ -23,7 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="min-h-screen font-sans  relative">
+    <div className="min-h-screen font-sans relative">
       {/* Hero Section */}
       <div
         className="relative h-screen bg-cover bg-center pb-24"
@@ -39,7 +39,7 @@ const Hero = () => {
 
         {/* Navbar */}
         <motion.nav
-          className="absolute top-0 left-0 w-full px-4 py-4    z-50"
+          className="absolute top-0 left-0 w-full px-4 py-4 z-50"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -93,14 +93,7 @@ const Hero = () => {
           animate="visible"
         >
           <motion.h2
-            className="
-    text-3xl md:text-5xl font-bold mb-2
-    leading-snug md:leading-tight
-    drop-shadow-md md:drop-shadow-lg
-    text-white
-    max-w-full
-    whitespace-normal
-  "
+            className="text-3xl md:text-5xl font-bold mb-2 leading-snug md:leading-tight drop-shadow-md md:drop-shadow-lg text-white max-w-full whitespace-normal"
             variants={item}
           >
             Creative Home Simplify Your
@@ -133,7 +126,7 @@ const Hero = () => {
       <div className="">
         {/* Stats Box */}
         <motion.div
-          className="relative mx-auto bg-[#117672] text-white w-[90%] max-w-7xl rounded-xl shadow-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-6 sm:gap-y-0 px-6 py-4 -mt-16 md:-mt-20 z-40"
+          className="relative mx-auto bg-[#117672] text-white w-[90%] max-w-7xl rounded-xl shadow-lg grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-y-6 sm:gap-y-6 md:gap-y-0 px-6 py-6 -mt-16 md:-mt-20 z-40"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1 }}
@@ -155,7 +148,7 @@ const Hero = () => {
               </p>
 
               {/* Vertical Divider */}
-              {idx < 3 && (
+              {idx % 2 === 0 && idx < 3 && (
                 <div className="hidden md:block absolute top-1 bottom-1 right-0 w-px bg-white/60"></div>
               )}
             </div>
