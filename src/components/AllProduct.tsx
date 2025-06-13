@@ -41,7 +41,7 @@ const AllProduct = () => {
   );
 
   return (
-    <section className="px-4 sm:px-6 md:px-20 py-16 text-center">
+    <section id="all-product" className="px-4 sm:px-6 md:px-20 py-16 text-center">
       <h2 className="text-3xl font-bold mb-2">All Product</h2>
       <p className="text-gray-500 max-w-xl mx-auto mb-12 px-2 sm:px-0">
         The products we provide only for you as our service are selected from the best

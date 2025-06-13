@@ -14,11 +14,13 @@ export default function App() {
       <FurnitureSection />
       <NewInStore />
       <MainHighlight />
-      <AllProduct />
+      {/* ✅ لف AllProduct داخل div فيه ID */}
+      <div id="all-products">
+        <AllProduct />
+      </div>{" "}
       <TestimonialSection />
       <NewsletterBanner />
       <Footer />
- 
     </div>
   );
 }

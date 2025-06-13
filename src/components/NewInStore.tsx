@@ -58,7 +58,7 @@ export default function NewInStore() {
             Get the latest items immediately <br /> with promo prices
           </p>
           <a
-            href="#"
+            href="#all-products"
             className="inline-flex items-center text-black font-semibold underline underline-offset-4"
           >
             Check All
