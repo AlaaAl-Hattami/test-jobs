@@ -78,7 +78,7 @@ function TestimonialSection() {
         <div className="hidden lg:flex space-x-4">
           <button
             onClick={handlePrev}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none ${
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none cursor-pointer ${
               activeButton === "prev"
                 ? "bg-teal-500 text-white"
                 : "bg-gray-200 text-gray-600 hover:bg-gray-300"
@@ -98,7 +98,7 @@ function TestimonialSection() {
 
           <button
             onClick={handleNext}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none ${
+            className={`w-12 h-12 cursor-pointer rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none  ${
               activeButton === "next"
                 ? "bg-teal-500 text-white"
                 : "bg-gray-200 text-gray-600 hover:bg-gray-300"
@@ -137,7 +137,7 @@ function TestimonialSection() {
         <div className="flex lg:hidden space-x-4 mt-6">
           <button
             onClick={handlePrev}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none ${
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none  ${
               activeButton === "prev"
                 ? "bg-teal-500 text-white"
                 : "bg-gray-200 text-gray-600 hover:bg-gray-300"
@@ -157,7 +157,7 @@ function TestimonialSection() {
 
           <button
             onClick={handleNext}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none ${
+            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none cursor-pointer ${
               activeButton === "next"
                 ? "bg-teal-500 text-white"
                 : "bg-gray-200 text-gray-600 hover:bg-gray-300"

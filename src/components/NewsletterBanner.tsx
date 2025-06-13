@@ -6,7 +6,7 @@ const NewsletterBanner = () => {
       className="relative bg-cover bg-center bg-no-repeat h-[550px] flex items-center justify-center md:justify-end px-6 md:px-20"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('/pierre-chatel-innocenti-pxoZSTdAzeU-unsplash.jpg')",
+   " url('/pierre-chatel-innocenti-pxoZSTdAzeU-unsplash.jpg')",
       }}
     >
       <div className="relative z-10 w-full max-w-2xl">
@@ -56,7 +56,7 @@ const NewsletterBanner = () => {
           />
           <button
             type="submit"
-            className="flex-shrink-0 px-8 py-3 bg-yellow-500 text-black rounded-md hover:bg-yellow-600 transition-colors font-semibold text-lg shadow-lg w-full sm:w-auto"
+            className="flex-shrink-0 px-8 py-3 bg-yellow-500 text-black rounded-md hover:bg-yellow-600 transition-colors font-semibold text-lg shadow-lg w-full sm:w-auto cursor-pointer"
           >
             Shop Now
           </button>

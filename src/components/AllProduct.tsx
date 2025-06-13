@@ -68,7 +68,7 @@ const AllProduct = () => {
                 alt={product.name}
                 className="w-full h-full object-cover rounded-md"
               />
-              <button className="absolute bottom-3 right-3 bg-gray-200 hover:bg-gray-300 p-2 rounded-full shadow transition-colors duration-200">
+              <button className="absolute bottom-3 right-3 bg-gray-200 hover:bg-gray-300 p-2 rounded-full shadow transition-colors duration-200 cursor-pointer">
                 <Plus className="w-5 h-5 text-gray-800" />
               </button>
             </div>
@@ -93,10 +93,10 @@ const AllProduct = () => {
       </motion.div>
 
       {/* أزرار السلايدر */}
-      <div className="flex justify-center items-center gap-4 mt-4">
+      <div className="flex justify-center items-center gap-4 mt-4 ">
         <button
           onClick={handlePrev}
-          className="w-9 h-9 flex items-center justify-center rounded-full border text-gray-500 hover:bg-gray-100 transition-colors"
+          className="w-9 h-9 flex items-center justify-center rounded-full border text-gray-500 hover:bg-gray-100 transition-colors cursor-pointer"
           aria-label="Previous Page"
         >
           <ChevronLeft className="w-5 h-5" />
@@ -113,7 +113,7 @@ const AllProduct = () => {
 
         <button
           onClick={handleNext}
-          className="w-9 h-9 flex items-center justify-center rounded-full border text-gray-500 hover:bg-gray-100 transition-colors"
+          className="w-9 h-9 flex items-center justify-center rounded-full border text-gray-500 hover:bg-gray-100 transition-colors cursor-pointer"
           aria-label="Next Page"
         >
           <ChevronRight className="w-5 h-5" />
