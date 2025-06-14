@@ -19,7 +19,7 @@ const Hero = () => {
       opacity: 1,
       y: 0,
       transition: {
-        ease: [0.42, 0, 0.58, 1], // منحنى التيسير (ease)
+        ease: [0.42, 0, 0.58, 1], 
         duration: 0.8,
       },
     },
@@ -38,7 +38,6 @@ const Hero = () => {
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/30 to-transparent z-20" />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
 
         {/* Navbar */}
         <motion.nav
