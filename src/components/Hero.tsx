@@ -51,7 +51,7 @@ const Hero = () => {
         >
           <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
             {/* Logo + Title */}
-            <div className="flex items-center space-x-2 md:space-x-1">
+            <div className="flex items-center space-x-2 md:space-x-1 cursor-pointer">
             
               <h1 className="text-xl md:text-2xl font-bold">FurniShop</h1>
                 <img
