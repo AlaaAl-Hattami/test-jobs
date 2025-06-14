@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import AllProduct from "./components/AllProduct";
 import Footer from "./components/Footer";
 import FurnitureSection from "./components/FurnitureSection";
@@ -6,22 +7,35 @@ import MainHighlight from "./components/MainHighlight";
 import NewInStore from "./components/NewInStore";
 import NewsletterBanner from "./components/NewsletterBanner";
 import TestimonialSection from "./components/TestimonialSection";
+import Loader from "./components/Loader"; // 👈 إضافة شاشة التحميل
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); 
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loader />;
+
   return (
-    <div>
-      {/* Home */}
-      <section id="home">
+    <main>
+      {/* القسم الرئيسي - الصفحة الأولى */}
+      <section id="home" className="scroll-mt-16">
         <Hero />
       </section>
 
-      {/* About */}
-      <section id="about">
+      {/* قسم من نحن أو نبذة */}
+      <section id="about" className="scroll-mt-16">
         <FurnitureSection />
       </section>
 
-      {/* Features */}
-      <section id="features">
+      {/* الميزات والمنتجات */}
+      <section id="features" className="scroll-mt-16">
         <NewInStore />
         <MainHighlight />
         <div id="all-products">
@@ -29,12 +43,12 @@ export default function App() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact">
+      {/* آراء العملاء والنشرة البريدية والفوتر */}
+      <section id="contact" className="scroll-mt-16">
         <TestimonialSection />
         <NewsletterBanner />
         <Footer />
       </section>
-    </div>
+    </main>
   );
 }
