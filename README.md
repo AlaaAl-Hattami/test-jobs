@@ -4,6 +4,12 @@
 
 ---
 
+## 🌐 رابط المعاينة المباشرة
+
+🔗 [https://furnitures-chi.vercel.app/](https://furnitures-chi.vercel.app/)
+
+---
+
 ## 📸 معاينة الواجهة
 
 ![preview](./public/preview.jpg)
@@ -33,4 +39,3 @@ npm install
 
 # 4. تشغيل التطبيق
 npm run dev
-
