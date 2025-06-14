@@ -1,27 +1,27 @@
 import { CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.7,
-      ease: [0.42, 0, 0.58, 1], // ✅
-      staggerChildren: 0.3, // تأخير ظهور كل طفل
+      ease: [0.42, 0, 0.58, 1],
+      staggerChildren: 0.3,
     },
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.5,
-      ease: [0.42, 0, 0.58, 1], // ✅
+      ease: [0.42, 0, 0.58, 1],
     },
   },
 };

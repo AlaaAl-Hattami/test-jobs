@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -13,13 +13,15 @@ const Hero = () => {
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {       ease: [0.42, 0, 0.58, 1], // ✅
- duration: 0.8 },
+      transition: {
+        ease: [0.42, 0, 0.58, 1], // منحنى التيسير (ease)
+        duration: 0.8,
+      },
     },
   };
 
@@ -43,8 +45,10 @@ const Hero = () => {
           className="absolute top-0 left-0 w-full px-4 py-4 z-50"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8,      ease: [0.42, 0, 0.58, 1], // ✅
- }}
+          transition={{
+            duration: 0.8,
+            ease: [0.42, 0, 0.58, 1], // easing curve
+          }}
         >
           <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
             <h1 className="text-xl md:text-2xl font-bold">FurniShop</h1>
@@ -146,29 +150,26 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1 }}
         >
-      {[0, 1, 2, 3].map((idx) => (
-  <div key={idx} className="relative text-center sm:px-4">
-    <h3 className="text-3xl sm:text-4xl font-bold text-white select-none">
-      {["7", "2", "10k+", "260+"][idx]}
-    </h3>
-    <p className="text-sm sm:text-base mt-2 leading-tight whitespace-pre-line">
-      {
-        [
-          "Year\nExperience",
-          "Opened\nin the country",
-          "Furniture\nsold",
-          "Variant\nFurniture",
-        ][idx]
-      }
-    </p>
+          {[0, 1, 2, 3].map((idx) => (
+            <div key={idx} className="relative text-center sm:px-4">
+              <h3 className="text-3xl sm:text-4xl font-bold text-white select-none">
+                {["7", "2", "10k+", "260+"][idx]}
+              </h3>
+              <p className="text-sm sm:text-base mt-2 leading-tight whitespace-pre-line">
+                {[
+                  "Year\nExperience",
+                  "Opened\nin the country",
+                  "Furniture\nsold",
+                  "Variant\nFurniture",
+                ][idx]}
+              </p>
 
-    {/* Vertical Dividers between columns */}
-    {(idx === 0 || idx === 1 || idx === 2) && (
-      <div className="hidden md:block absolute top-1 bottom-1 right-0 w-px bg-white/60"></div>
-    )}
-  </div>
-))}
-
+              {/* Vertical Dividers between columns */}
+              {(idx === 0 || idx === 1 || idx === 2) && (
+                <div className="hidden md:block absolute top-1 bottom-1 right-0 w-px bg-white/60"></div>
+              )}
+            </div>
+          ))}
         </motion.div>
       </div>
     </div>

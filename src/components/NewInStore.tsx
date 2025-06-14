@@ -1,17 +1,35 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 const items = [
   { title: "Chair", image: "/pexels-heyho-6580227.jpg" },
   { title: "Cupboard", image: "/sanibell-bv-r2SxETsa5SA-unsplash.jpg" },
-  {
-    title: "Bed",
-    image: "/albero-furniture-bratislava-u88zDvr5V6g-unsplash.jpg",
-  },
-
+  { title: "Bed", image: "/albero-furniture-bratislava-u88zDvr5V6g-unsplash.jpg" },
   { title: "Lighting", image: "/reinaldo-EQz1tZWS1hM-unsplash.jpg" },
 ];
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 40, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.42, 0, 0.58, 1],
+    },
+  },
+};
 
 export default function NewInStore() {
   const controls = useAnimation();
@@ -27,28 +45,6 @@ export default function NewInStore() {
       controls.start("hidden");
     }
   }, [inView, controls]);
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.42, 0, 0.58, 1], // ✅
-      },
-    },
-  };
 
   return (
     <section className="w-full bg-white py-12 px-4 sm:px-6 md:px-10">
@@ -104,7 +100,6 @@ export default function NewInStore() {
                 cursor-pointer
                 transition-transform 
                 duration-500 
-                     ease: [0.42, 0, 0.58, 1] // ✅
 
                 hover:scale-105
                 hover:shadow-2xl
@@ -123,7 +118,6 @@ export default function NewInStore() {
                   object-cover 
                   transition-transform 
                   duration-500 
-                       ease: [0.42, 0, 0.58, 1] // ✅
 
                   group-hover:scale-110
                 "
