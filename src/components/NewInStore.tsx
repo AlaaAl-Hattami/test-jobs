@@ -5,7 +5,10 @@ import { useEffect } from "react";
 const items = [
   { title: "Chair", image: "/pexels-heyho-6580227.jpg" },
   { title: "Cupboard", image: "/sanibell-bv-r2SxETsa5SA-unsplash.jpg" },
-    { title: "Bed", image: "/albero-furniture-bratislava-u88zDvr5V6g-unsplash.jpg" },
+  {
+    title: "Bed",
+    image: "/albero-furniture-bratislava-u88zDvr5V6g-unsplash.jpg",
+  },
 
   { title: "Lighting", image: "/reinaldo-EQz1tZWS1hM-unsplash.jpg" },
 ];
@@ -13,8 +16,8 @@ const items = [
 export default function NewInStore() {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: false, 
-    threshold: 0.3, 
+    triggerOnce: false,
+    threshold: 0.3,
   });
 
   useEffect(() => {
@@ -36,7 +39,15 @@ export default function NewInStore() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 40, scale: 0.9 },
-    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.42, 0, 0.58, 1], // ✅
+      },
+    },
   };
 
   return (
@@ -53,8 +64,12 @@ export default function NewInStore() {
             visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
           }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">New In</h2>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Store Now</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+            New In
+          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Store Now
+          </h2>
           <p className="text-gray-600 mb-6 md:mb-10 pt-6 md:pt-14 leading-relaxed text-base md:text-lg">
             Get the latest items immediately <br /> with promo prices
           </p>
@@ -89,7 +104,8 @@ export default function NewInStore() {
                 cursor-pointer
                 transition-transform 
                 duration-500 
-                ease-in-out
+                     ease: [0.42, 0, 0.58, 1] // ✅
+
                 hover:scale-105
                 hover:shadow-2xl
                 hover:z-10
@@ -107,7 +123,8 @@ export default function NewInStore() {
                   object-cover 
                   transition-transform 
                   duration-500 
-                  ease-in-out 
+                       ease: [0.42, 0, 0.58, 1] // ✅
+
                   group-hover:scale-110
                 "
               />

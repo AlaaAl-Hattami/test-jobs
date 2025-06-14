@@ -18,7 +18,8 @@ const Hero = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { ease: "easeOut", duration: 0.8 },
+      transition: {       ease: [0.42, 0, 0.58, 1], // ✅
+ duration: 0.8 },
     },
   };
 
@@ -42,7 +43,8 @@ const Hero = () => {
           className="absolute top-0 left-0 w-full px-4 py-4 z-50"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8,      ease: [0.42, 0, 0.58, 1], // ✅
+ }}
         >
           <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
             <h1 className="text-xl md:text-2xl font-bold">FurniShop</h1>

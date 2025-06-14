@@ -52,7 +52,8 @@ function TestimonialSection() {
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6,       ease: [0.42, 0, 0.58, 1], // ✅
+}}
         className="lg:w-1/2 flex flex-col justify-center p-8 lg:p-16"
       >
         <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-8">
@@ -122,7 +123,8 @@ function TestimonialSection() {
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+        transition={{ duration: 0.6,      ease: [0.42, 0, 0.58, 1], // ✅
+ delay: 0.2 }}
         className="lg:w-1/2 flex flex-col items-center justify-center p-6"
       >
         <div className="w-[650px] max-w-full h-[400px] rounded-2xl overflow-hidden shadow-lg">

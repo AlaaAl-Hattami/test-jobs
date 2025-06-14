@@ -9,7 +9,8 @@ const MainHighlight = () => {
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        transition={{ duration: 0.7,       ease: [0.42, 0, 0.58, 1], // ✅
+}}
       >
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug mb-6">
           The Best Furniture <br /> Manufacturer Of Your Choice
@@ -28,7 +29,8 @@ const MainHighlight = () => {
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+        transition={{ duration: 0.7,       ease: [0.42, 0, 0.58, 1], // ✅
+ delay: 0.2 }}
       >
         <img
           src="/pexels-fotoaibe-1668860.jpg"

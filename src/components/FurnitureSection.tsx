@@ -8,7 +8,7 @@ const containerVariants = {
     y: 0,
     transition: {
       duration: 0.7,
-      ease: "easeOut",
+      ease: [0.42, 0, 0.58, 1], // ✅
       staggerChildren: 0.3, // تأخير ظهور كل طفل
     },
   },
@@ -21,7 +21,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
+      ease: [0.42, 0, 0.58, 1], // ✅
     },
   },
 };
@@ -56,10 +56,7 @@ const FurnitureSection = () => {
           >
             We Create Your Home <br /> More Aesthetic
           </motion.h2>
-          <motion.p
-            variants={itemVariants}
-            className="text-gray-600 mb-8"
-          >
+          <motion.p variants={itemVariants} className="text-gray-600 mb-8">
             Furniture power is a software as services for multipurpose <br />
             business management system,
           </motion.p>
