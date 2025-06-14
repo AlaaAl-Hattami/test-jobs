@@ -51,7 +51,16 @@ const Hero = () => {
           }}
         >
           <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
-            <h1 className="text-xl md:text-2xl font-bold">FurniShop</h1>
+            {/* Logo + Title */}
+            <div className="flex items-center space-x-2 md:space-x-1">
+            
+              <h1 className="text-xl md:text-2xl font-bold">FurniShop</h1>
+                <img
+                src="/logoipsum-377.svg"
+                alt="Logo"
+                className="w-8 h-8 md:w-10 md:h-10"
+              />
+            </div>
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex space-x-4 md:space-x-6 text-sm md:text-base">
@@ -156,12 +165,14 @@ const Hero = () => {
                 {["7", "2", "10k+", "260+"][idx]}
               </h3>
               <p className="text-sm sm:text-base mt-2 leading-tight whitespace-pre-line">
-                {[
-                  "Year\nExperience",
-                  "Opened\nin the country",
-                  "Furniture\nsold",
-                  "Variant\nFurniture",
-                ][idx]}
+                {
+                  [
+                    "Year\nExperience",
+                    "Opened\nin the country",
+                    "Furniture\nsold",
+                    "Variant\nFurniture",
+                  ][idx]
+                }
               </p>
 
               {/* Vertical Dividers between columns */}
