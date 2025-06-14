@@ -51,13 +51,13 @@ const Hero = () => {
         >
           <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
             {/* Logo + Title */}
-            <div className="flex items-center space-x-2 md:space-x-1 cursor-pointer">
+            <div className="flex items-center space-x-2 md:space-x-1 cursor-pointer ">
             
-              <h1 className="text-xl md:text-2xl font-bold">FurniShop</h1>
+              <h1 className="text-xl md:text-2xl font-bold hover:text-gray-200">FurniShop</h1>
                 <img
                 src="/logoipsum-377.svg"
                 alt="Logo"
-                className="w-8 h-8 md:w-10 md:h-10"
+                className="w-8 h-8 md:w-10 md:h-10 h"
               />
             </div>
 
